@@ -1,8 +1,19 @@
 # TeapotDome
 
-Check out the [2D survey map](./2DNavigationLinesA-E.geojson)
+This is an experiment in using software development processes like 
+[_source control_](https://en.wikipedia.org/wiki/Version_control) and a 
+[_one step build_](http://www.joelonsoftware.com/articles/fog0000000043.html) 
+for a seismic interpretation project.
+
+Check out the build output for the [2D survey map](./2DNavigationLinesA-E.geojson)
 
 ## Getting started
+
+#### Environment
+
+- [git](https://git-scm.com)
+- [git-lfs](https://git-lfs.github.com)
+- [node](https://nodejs.org) (including [npm](https://www.npmjs.com))
 
 #### Clone the repo, install dependencies and build
     
@@ -13,39 +24,32 @@ Check out the [2D survey map](./2DNavigationLinesA-E.geojson)
 
 ## Attribution
 
-Data is courtesy of RMOTC and the U.S. Department of Energy
+Teapot Dome data being used to demonstrate this process is
+courtesy of 
+[RMOTC](http://www.fe.doe.gov/facilities/rmotc/) and the U.S. Department of Energy.
+
+This experiment was started at the 
+[2015 Geophysics Hackathon](http://www.agilegeoscience.com/events/2015/10/17/geophysics-hackathon-2015).
 
 ## Notes
 
-### Environment
-
-- git
-- git-lfs
-- npm
-
-
-
-
 ### LFS
 
-Install [git LFS client](https://git-lfs.github.com)
+Looking at [.gitattributes](./.gitattributes) you see that SEG-Y files are associated with 
+[git Large File Storage](https://git-lfs.github.com). 
+This was accomplished with the following command:
 
-Associate SEG-Y files with large file storage
+`git lfs track "*.sgy" "*.segy"`
 
-`git lfs track "*.sgy" "*.segy" "*.pdf"`
-
+The 3D survey is not yet in this repo because GitHub restricts even large files to 100MB.
 
 ### GIS
 
-<https://epsg.io/32056>
+From [2DNavigationLinesA-E.txt](./source/2D_Seismic/2DNavigationLinesA-E.txt) we find that the XY values
+are in the [NAD27 State Plane for Wyoming East Central](https://epsg.io/32056). 
 
-    H Active Project Name: C:\GGraphix_Projects\NPR-3
-    H Coordinate System: SPCS27 - Wyoming East Central  Datum:  NAD 1927 -  North America Datum of 1927 (Mean)
-    H Data Coordinate System Units: U.S. Survey Feet
-    H Project Measurement Units: Feet.
+The build generates a [geoJSON file GitHub can easily display](https://help.github.com/articles/mapping-geojson-files-on-github/)
+converted to [WGS84](https://epsg.io/4326) degrees.
 
-WYOMING EAST CENTRAL ZONE FIPSZONE: 4902 ADSZONE: 5801 UTM ZONE: 13
-
-Expect something like: 
-804635, 935826 -> 42.1527484°, -109.2056781°
-(via http://www.earthpoint.us/StatePlane.aspx)
+Using [EarthPoint.us](http://www.earthpoint.us/StatePlane.aspx) we can check a conversion. We expect something like: 
+804635, 935826 -> 42.1527484°, -109.2056781°.
