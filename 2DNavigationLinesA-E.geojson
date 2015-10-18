@@ -2195,6 +2195,156 @@
       "properties": {
         "name": "E"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.19031831925638,
+          43.227064790924324
+        ]
+      },
+      "properties": {
+        "name": "A",
+        "shotPointNumber": "100",
+        "z": -42.00419782381505
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.2475489863984,
+          43.30264282844215
+        ]
+      },
+      "properties": {
+        "name": "B",
+        "shotPointNumber": "100",
+        "z": -42.31738757900894
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.23110711597532,
+          43.28885227508291
+        ]
+      },
+      "properties": {
+        "name": "C",
+        "shotPointNumber": "100",
+        "z": -42.26023663021624
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.23401652822949,
+          43.25597262328114
+        ]
+      },
+      "properties": {
+        "name": "D",
+        "shotPointNumber": "100",
+        "z": -42.123983481898904
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.2148951211771,
+          43.27644439442075
+        ]
+      },
+      "properties": {
+        "name": "E",
+        "shotPointNumber": "103",
+        "z": -42.208817249163985
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.2448840589839,
+          43.33892427821362
+        ]
+      },
+      "properties": {
+        "name": "A",
+        "shotPointNumber": "302",
+        "z": -42.46775371488184
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.20161722923113,
+          43.33839728070386
+        ]
+      },
+      "properties": {
+        "name": "B",
+        "shotPointNumber": "182",
+        "z": -42.46556952595711
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.17780122576643,
+          43.31736500432248
+        ]
+      },
+      "properties": {
+        "name": "C",
+        "shotPointNumber": "181",
+        "z": -42.37840126641095
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.15790237424207,
+          43.28414776279327
+        ]
+      },
+      "properties": {
+        "name": "D",
+        "shotPointNumber": "206",
+        "z": -42.2407405404374
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.17378715683952,
+          43.29547937622959
+        ]
+      },
+      "properties": {
+        "name": "E",
+        "shotPointNumber": "162",
+        "z": -42.287700509652495
+      }
     }
   ]
 }
