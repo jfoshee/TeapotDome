@@ -5,11 +5,13 @@
   "main": "Jakefile.js",
   "dependencies": {
     "geojson": "^0.2.1",
-    "jake": "^8.0.12",
     "proj4": "^2.3.12"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jake": "^8.0.12"
+  },
   "scripts": {
+    "build": "jake",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

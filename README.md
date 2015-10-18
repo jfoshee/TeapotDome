@@ -2,6 +2,15 @@
 
 Check out the [2D survey map](./2DNavigationLinesA-E.geojson)
 
+## Getting started
+
+#### Clone the repo, install dependencies and build
+    
+    git clone https://github.com/jfoshee/TeapotDome.git
+    cd TeapotDome
+    npm install
+    npm run build
+
 ## Attribution
 
 Data is courtesy of RMOTC and the U.S. Department of Energy
