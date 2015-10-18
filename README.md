@@ -35,3 +35,7 @@ Associate SEG-Y files with large file storage
     H Project Measurement Units: Feet.
 
 WYOMING EAST CENTRAL ZONE FIPSZONE: 4902 ADSZONE: 5801 UTM ZONE: 13
+
+Expect something like: 
+804635, 935826 -> 42.1527484°, -109.2056781°
+(via http://www.earthpoint.us/StatePlane.aspx)
