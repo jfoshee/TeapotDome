@@ -1,5 +1,6 @@
 # TeapotDome
-Using Git LFS with SEGY
+
+Check out the [2D survey map](./2DNavigationLinesA-E.geojson)
 
 ## Attribution
 
