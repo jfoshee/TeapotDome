@@ -46,3 +46,8 @@ for (var i = 0; i < lineCoordinates.length; i++) {
 }
 console.log(convertedCoordinates[0]);
 console.log(convertedCoordinates[534]);
+
+var GeoJSON = require('geojson');
+var g = GeoJSON.parse(convertedCoordinates, {Point: ['y', 'x']});
+console.log(g.features[0]);
+fs.writeFileSync("2DNavigationLinesA-E.geojson", JSON.stringify(g));
