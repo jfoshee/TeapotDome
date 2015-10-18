@@ -1,0 +1,28 @@
+{
+  "name": "TeapotDome",
+  "version": "1.0.0",
+  "description": "Using dev tools for geophysics. Build with `jake`.",
+  "main": "Jakefile.js",
+  "dependencies": {
+    "geojson": "^0.2.1",
+    "jake": "^8.0.12",
+    "proj4": "^2.3.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jfoshee/TeapotDome.git"
+  },
+  "keywords": [
+    "geophysics"
+  ],
+  "author": "Jacob Foshee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jfoshee/TeapotDome/issues"
+  },
+  "homepage": "https://github.com/jfoshee/TeapotDome"
+}
