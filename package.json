@@ -1,7 +1,7 @@
 {
   "name": "TeapotDome",
   "version": "1.0.0",
-  "description": "Using dev tools for geophysics. Build with `jake`.",
+  "description": "Using dev tools for geophysics. Build with `npm run build`.",
   "main": "Jakefile.js",
   "dependencies": {
     "geojson": "^0.2.1",
