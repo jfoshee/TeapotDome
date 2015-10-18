@@ -1,5 +1,5 @@
 var fs = require("fs");
-
+var assert = require("assert");
 
 var coordinateText = fs.readFileSync("source/2D_Seismic/2DNavigationLinesA-E.txt", "ascii");
 // Values start on line 6
@@ -27,10 +27,10 @@ for (var i = 0; i < textLines.length; i++) {
     };
     lineCoordinates.push(coordinate);
 }
-
 console.log(lineCoordinates.length + " coordinates loaded");
-console.log(lineCoordinates[0]);
-console.log(lineCoordinates[534]);
+assert.equal(lineCoordinates.length, 535, "Should be 535 coordinate lines in file");
+//console.log(lineCoordinates[0]);
+//console.log(lineCoordinates[534]);
 
 var proj4 = require("proj4");
 var epsg32056 = "EPSG:32056";
@@ -44,10 +44,48 @@ for (var i = 0; i < lineCoordinates.length; i++) {
     var p = conversion.forward(lineCoordinates[i]);
     convertedCoordinates.push(p);
 }
-console.log(convertedCoordinates[0]);
-console.log(convertedCoordinates[534]);
+//console.log(convertedCoordinates[0]);
+//console.log(convertedCoordinates[534]);
+console.log("Coordinates converted to " + wgs84);
 
+function named(name) {
+    return function(p) { return p.name === name; }
+}
+
+function selectPointCoordinates(p) {
+    return [p.x, p.y];
+}
+
+function pointsToLine(coords) {
+    return { 
+        name: coords[0].name,
+        line: coords.map(selectPointCoordinates)
+    };
+}
+
+function selectLine(name) {
+    var coords = convertedCoordinates.filter(named(name));
+    var line = pointsToLine(coords);
+    return line;
+}
+//console.log(selectLine("A"));
+
+// TODO: Break dependence on hard-coded names
+var lines = [
+    selectLine("A"),
+    selectLine("B"),
+    selectLine("C"),
+    selectLine("D"),
+    selectLine("E")
+];
+assert.equal(lines[0].line.length, 1 + 302 - 100, "Line A shotpoints");
+assert.equal(lines[1].line.length, 1 + 182 - 100, "Line B shotpoints");
+assert.equal(lines[4].line.length, 1 + 162 - 103, "Line E shotpoints");
+    
 var GeoJSON = require('geojson');
-var g = GeoJSON.parse(convertedCoordinates, {Point: ['y', 'x']});
-console.log(g.features[0]);
-fs.writeFileSync("2DNavigationLinesA-E.geojson", JSON.stringify(g));
+// var g = GeoJSON.parse(convertedCoordinates, {Point: ['y', 'x']});
+var g = GeoJSON.parse(lines, {'LineString': 'line'});
+//console.log(g.features[0]);
+assert.equal(g.features[0].geometry.coordinates.length, 203);
+fs.writeFileSync("2DNavigationLinesA-E.geojson", JSON.stringify(g, null, 2));
+console.log("2DNavigationLinesA-E.geojson updated.")
